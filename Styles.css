@@ -1,0 +1,116 @@
+  :root{
+    --backgroundColor-secondary: #20293a;
+    --backgroundColor-primary: #111629;
+    --color-hover: #242e41;
+    --color-primary: #d2d6dc;
+    --color-tags: #6c74a7;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--backgroundColor-primary);
+  }
+
+  .author-info {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 16px;
+    color: #fff;
+  }
+
+  .author-info {
+    position: fixed;
+    bottom: 16px;
+  }
+
+  .author-info a {
+    color: #00a0d1;
+    text-decoration: none;
+  }
+
+  .quote-container {
+    width: 30rem;
+    padding: 1.5rem;
+    background-color: var(--backgroundColor-secondary);
+    background-image: url(resources/bg-image-random-quote.svg);
+    background-size: cover;
+    border-radius: 15px;
+  }
+
+  .quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quote-author {
+    font-family: "Cabin", sans-serif;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.6rem;
+  }
+
+  .quote-tag {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    font-family: "Cabin", sans-serif;
+    font-size: 11px;
+    color: var(--color-tags);
+    border: solid 1px var(--color-tags);
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .quote-text {
+    font-family: "Nunito", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .buttons-quote {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 12px;
+    width: 6rem;
+    padding: 0.575rem 0.875rem;
+    border: none;
+    background-color: var(--backgroundColor-secondary);
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+  }
+
+  button:hover {
+    background-color: var(--color-hover);
+  }
+
+  .random-quote {
+    width: 7rem;
+  }
