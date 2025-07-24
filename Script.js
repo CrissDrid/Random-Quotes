@@ -4,16 +4,19 @@ let currentQuote;
 fetch(
   "https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/3-javascript/challenges/group_1/data/random-quotes.json"
 )
-
+  //Cuando la promesa trae el array de la citas lo inicializa
   .then((response) => response.json())
   .then((json) => {
     data = json;
+    //Se mostraran las citas random cuando se entra a la pagina
     randomQuote()
   })
+  //Respuesta de error
   .catch((error) => {
     console.error("Error fetching data:", error);
   });
 
+  //Funcion encargada de mostrar siempre una cita random y rendrizarla en el DOM
   function randomQuote() {
     const randomIndex = Math.floor(Math.random() * data.length);
     const randomQuote = data[randomIndex]
@@ -40,9 +43,10 @@ fetch(
     const quoteElement = document.querySelector(".quote-text")
     quoteElement.innerText = `“${randomQuote.quote}”`;
   }
-
+  //Evento para el boton de citas random al hacer click
   document.querySelector(".random-quote").addEventListener("click", randomQuote);
 
+  //Funcion encargada de renderizar la notificacion de elemento cita copiada en el porta papeles
   function showToaste(message) {
     const toast = document.getElementById("toast")
     toast.textContent = message;
@@ -55,6 +59,7 @@ fetch(
     }, 2500)
   }
 
+  //Funcion encargada de copiar la cita en el portapapeles y mostrar la notificacion despues de copiada
   function shareQuote() {
     const shareQuote = `“${currentQuote.quote}” - ${currentQuote.author}`
 
@@ -67,5 +72,5 @@ fetch(
         showToaste("Error al copiar la cita")
       })
   }
-
+  //Evento para el boton de compartir cita al hacer click
   document.querySelector(".share-quote").addEventListener("click", shareQuote)
